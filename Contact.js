@@ -160,6 +160,7 @@ try {
 } catch (e) {
     console.error(e);
 }
+console.log("\n---------------------------------");
 
 // UC3 Create address book array of contacts
 let addressBook = new Array();
@@ -175,9 +176,9 @@ addressBook.push(new Contact("Ravi", "Kumar", "JLN Marg", "Sampak",
 "Kerala", "230056", "9648515621", "rkboi@yahoo.com"));
 
 process.stdout.write(addressBook.join("\n").toString());
+console.log("\n---------------------------------");
 
 // UC4 Edit address of contact in address book
-
 function editContactAddress(firstName, lastName, newAddress) {
     for(i = 0; i < addressBook.length; i++) {
         if(addressBook[i].firstName == firstName && addressBook[i].lastName == lastName)
@@ -187,3 +188,17 @@ function editContactAddress(firstName, lastName, newAddress) {
 
 editContactAddress("Ruskin", "Bond", "Plot-234");
 process.stdout.write(addressBook.join("\n").toString());
+
+console.log("\n---------------------------------");
+// UC5 Delete contact from address book
+function deleteContactFromAB(firstName, lastName) {
+    for(i = 0; i < addressBook.length; i++) {
+        if(addressBook[i].firstName == firstName && addressBook[i].lastName == lastName)
+            addressBook.splice(i,1);
+    }
+}
+
+deleteContactFromAB("Tanmay", "Jain");
+process.stdout.write(addressBook.join("\n").toString());
+
+console.log("\n---------------------------------");
