@@ -213,3 +213,23 @@ function countContactsInAB() {
 process.stdout.write("No of contacts in address book: " + countContactsInAB());
 
 console.log("\n---------------------------------");
+// UC7 Check for duplicate contact in address book when adding 
+function addContactInAB(contact) {
+    for(i = 0; i < addressBook.length; i++) {
+        if(addressBook[i].firstName == contact.firstName && addressBook[i].lastName == contact.lastName) {
+            throw "Contact already exixts in Address Book";
+        }
+    }
+    addressBook.push(contact);
+}
+
+{
+    let contact = new Contact("Ravi", "Kumar", "JLN Marg", "Sampak", "Kerala", "230056", "9648515621", "rkboi@yahoo.com");
+    try {
+        addContactInAB(contact);
+    } catch(e) {
+        console.error(e);
+    }
+}
+
+console.log("\n---------------------------------");
