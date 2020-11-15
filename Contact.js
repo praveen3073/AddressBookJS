@@ -248,3 +248,15 @@ searchContactOnCityState("Ravi","","Kerala");
 searchContactOnCityState("Ravi","Sampak","Kerala");
 
 console.log("\n---------------------------------");
+//UC9 View contacts by city or state
+function viewByCity(city){
+    addressBook.filter(contact => contact.city == city).forEach(contact => console.log(contact.toString()))
+}
+
+function viewByState(state){
+    addressBook.filter(contact => contact.state == state).forEach(contact => console.log(contact.toString()))
+}
+viewByCity("Mussorie");
+viewByState("Kerala");
+
+console.log("\n---------------------------------");
