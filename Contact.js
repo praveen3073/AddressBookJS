@@ -175,3 +175,15 @@ addressBook.push(new Contact("Ravi", "Kumar", "JLN Marg", "Sampak",
 "Kerala", "230056", "9648515621", "rkboi@yahoo.com"));
 
 process.stdout.write(addressBook.join("\n").toString());
+
+// UC4 Edit address of contact in address book
+
+function editContactAddress(firstName, lastName, newAddress) {
+    for(i = 0; i < addressBook.length; i++) {
+        if(addressBook[i].firstName == firstName && addressBook[i].lastName == lastName)
+            addressBook[i].address = newAddress;
+    }
+}
+
+editContactAddress("Ruskin", "Bond", "Plot-234");
+process.stdout.write(addressBook.join("\n").toString());
