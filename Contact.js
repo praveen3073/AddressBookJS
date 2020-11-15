@@ -233,3 +233,18 @@ function addContactInAB(contact) {
 }
 
 console.log("\n---------------------------------");
+//UC8 Check for contact in address book by city and state
+function searchContactOnCityState(firstName, city, state){
+    let citySearch = addressBook.find(contact => contact.firstName == firstName && contact.city == city);
+    let stateSearch = addressBook.find(contact => contact.firstName == firstName && contact.state == state);
+    if (citySearch == undefined){
+        if (stateSearch == undefined){
+            console.log(firstName + " does not exist.");
+        }else {console.log(stateSearch.toString());}
+    }else {console.log(citySearch.toString());}
+}
+searchContactOnCityState("Ravi","Sampak","");
+searchContactOnCityState("Ravi","","Kerala");
+searchContactOnCityState("Ravi","Sampak","Kerala");
+
+console.log("\n---------------------------------");
