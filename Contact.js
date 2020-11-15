@@ -202,3 +202,14 @@ deleteContactFromAB("Tanmay", "Jain");
 process.stdout.write(addressBook.join("\n").toString());
 
 console.log("\n---------------------------------");
+// UC6 Get number of contacts in address book
+function countContactsInAB() {
+    function getCount(count, contact) {
+        return count + 1;
+    }
+    return addressBook.reduce(getCount, 0);
+}
+
+process.stdout.write("No of contacts in address book: " + countContactsInAB());
+
+console.log("\n---------------------------------");
